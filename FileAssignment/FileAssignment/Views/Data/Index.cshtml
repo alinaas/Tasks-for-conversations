@@ -1,0 +1,23 @@
+﻿@using FileAssignment.Models
+
+@model  Data
+
+@{
+	ViewBag.Title = "Data Page";
+}
+
+@Scripts.Render("~/bundles/data")
+<div>
+	<div>
+		<label>Saved date:</label> <span id="savedData">@Html.DisplayFor(model => model.Date)</span>
+	</div>
+	<div>
+		<label>New date:</label>
+		@Html.TextBox("Date", "", new { @class = "datepicker", @readonly = "readonly" })
+		<button disabled="disabled" id="saveData">Send date</button>
+	</div>
+	<div class="alert alert-danger error-message hidden">
+		<strong>Something went wrong</strong><br />Sorry...
+	</div>
+</div>
+

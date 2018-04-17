@@ -1,0 +1,56 @@
+﻿@using WcfAssignment.Models
+
+@model  MatchBasicDataModel
+
+@{
+	ViewBag.Title = "MatchBasicData List";
+}
+<div>
+	<div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Name</th>
+					<th scope="col">MatchDate</th>
+					<th scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (var i = 0; i < Model.Items.Count; i++)
+				{
+					<tr>
+						<td>
+							@Html.DisplayFor(item => Model.Items[i].Id)
+						</td>
+						<td>
+							@Html.DisplayFor(item => Model.Items[i].Name)
+						</td>
+						<td>
+							<div style="float: left">
+								@Html.TextBoxFor(item => Model.Items[i].MatchDate, new { @class = "datepicker", data_id = Model.Items[i].Id, @readonly = "readonly" })
+							</div>
+							<div data-id="@Model.Items[i].Id" class="preloader hidden">
+								<div class="loader" id="loader-4">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+							</div>
+						</td>
+						<td>
+							@Html.DisplayFor(item => Model.Items[i].Description)
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+		<div class="alert alert-danger hidden error-message">
+			<strong>Something went wrong</strong><br />Sorry...
+		</div>
+	</div>
+</div>
+@Scripts.Render("~/bundles/matchbasicdata.js")
+
+
+

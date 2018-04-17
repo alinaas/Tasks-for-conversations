@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfFrequency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Frequency" nillable="true" type="tns:Frequency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFrequency" nillable="true" type="tns:ArrayOfFrequency" />
+  <xs:complexType name="Frequency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="ser:char" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Frequency" nillable="true" type="tns:Frequency" />
+  <xs:complexType name="MatchBasicData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ParameterObject">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccessGroups" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="AnalyseDataTypes" type="xs:int" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CategorySortOrder" type="xs:int" />
+          <xs:element minOccurs="0" name="CurrentStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiffPrecision" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Diffs" type="xs:int" />
+          <xs:element minOccurs="0" name="Frequency" type="ser:char" />
+          <xs:element minOccurs="0" name="FrequencyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsAccountReconciliation" type="xs:int" />
+          <xs:element minOccurs="0" name="IsSingleSourceMatch" type="xs:int" />
+          <xs:element minOccurs="0" name="LastRun" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastRunId" type="xs:int" />
+          <xs:element minOccurs="0" name="LastRunMatchboard" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastRunNote" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Layout" type="tns:Layout" />
+          <xs:element minOccurs="0" name="MatchDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MatchStatus" type="xs:int" />
+          <xs:element minOccurs="0" name="MatchingItems" type="xs:int" />
+          <xs:element minOccurs="0" name="MoreInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OpenRowCount" type="xs:int" />
+          <xs:element minOccurs="0" name="PrimaryBatchId" type="xs:int" />
+          <xs:element minOccurs="0" name="RequireApproval" type="xs:int" />
+          <xs:element minOccurs="0" name="SecondaryBatchId" type="xs:int" />
+          <xs:element minOccurs="0" name="ShowAutoComments" type="xs:int" />
+          <xs:element minOccurs="0" name="ShowErrorsOnly" type="xs:int" />
+          <xs:element minOccurs="0" name="SortPriority" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SourceParameters" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+          <xs:element minOccurs="0" name="SourceStatus" nillable="true" type="tns:SourceStatus" />
+          <xs:element minOccurs="0" name="Template" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" type="tns:MatchType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MatchBasicData" nillable="true" type="tns:MatchBasicData" />
+  <xs:complexType name="ParameterObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecretKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionUserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParameterObject" nillable="true" type="tns:ParameterObject" />
+  <xs:simpleType name="Layout">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SINGLE" />
+      <xs:enumeration value="MULTI" />
+      <xs:enumeration value="UNDEFINED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Layout" nillable="true" type="tns:Layout" />
+  <xs:complexType name="SourceStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PrimaryColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SourceStatus" nillable="true" type="tns:SourceStatus" />
+  <xs:simpleType name="MatchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NUMERIC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRING">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DATE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MULTI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MatchType" nillable="true" type="tns:MatchType" />
+  <xs:complexType name="MatchBasic">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ParameterObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CacheId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxRunDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryBatchId" type="xs:int" />
+          <xs:element minOccurs="0" name="RequireApproval" type="xs:int" />
+          <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MatchBasic" nillable="true" type="tns:MatchBasic" />
+  <xs:complexType name="ArrayOfMatchBasicData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchBasicData" nillable="true" type="tns:MatchBasicData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchBasicData" nillable="true" type="tns:ArrayOfMatchBasicData" />
+  <xs:complexType name="ArrayOfMatchBasic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchBasic" nillable="true" type="tns:MatchBasic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchBasic" nillable="true" type="tns:ArrayOfMatchBasic" />
+  <xs:complexType name="ArrayOfMatchHistoryDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchHistoryDetails" nillable="true" type="tns:MatchHistoryDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchHistoryDetails" nillable="true" type="tns:ArrayOfMatchHistoryDetails" />
+  <xs:complexType name="MatchHistoryDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Frequency" type="ser:char" />
+      <xs:element minOccurs="0" name="FrequencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="LatestRunDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MatchId" type="xs:int" />
+      <xs:element minOccurs="0" name="MatchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxOpenAgeDays" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeClass" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeClass1LowerLimit" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeClass2LowerLimit" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeClass3LowerLimit" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalOpenItemCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchHistoryDetails" nillable="true" type="tns:MatchHistoryDetails" />
+  <xs:complexType name="ArrayOfRecentActivityDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecentActivityDetails" nillable="true" type="tns:RecentActivityDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecentActivityDetails" nillable="true" type="tns:ArrayOfRecentActivityDetails" />
+  <xs:complexType name="RecentActivityDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BatchId" type="xs:int" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HypeLinkVisibility" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MatchId" type="xs:int" />
+      <xs:element minOccurs="0" name="MatchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowId" type="xs:int" />
+      <xs:element minOccurs="0" name="RunId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecentActivityDetails" nillable="true" type="tns:RecentActivityDetails" />
+  <xs:complexType name="ArrayOfMatchStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchStatus" nillable="true" type="tns:MatchStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchStatus" nillable="true" type="tns:ArrayOfMatchStatus" />
+  <xs:complexType name="MatchStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasicData" nillable="true" type="tns:MatchBasicData" />
+      <xs:element minOccurs="0" name="EntryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EntryUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpenRowCount" type="xs:int" />
+      <xs:element minOccurs="0" name="RunDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RunId" type="xs:int" />
+      <xs:element minOccurs="0" name="ShowParameters" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SourceNames" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Status" type="tns:MStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchStatus" nillable="true" type="tns:MatchStatus" />
+  <xs:simpleType name="MStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPEN" />
+      <xs:enumeration value="CLOSED" />
+      <xs:enumeration value="APPROVED" />
+      <xs:enumeration value="FAILED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MStatus" nillable="true" type="tns:MStatus" />
+</xs:schema>

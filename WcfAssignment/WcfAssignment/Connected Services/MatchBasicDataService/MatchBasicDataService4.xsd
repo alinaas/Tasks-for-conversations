@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" />
+  <xs:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" />
+  <xs:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="TestConnection">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnectionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnection2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uri" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnection2Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFrequencyCollection">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFrequencyCollectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="GetFrequencyCollectionResult" nillable="true" type="q1:ArrayOfFrequency" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q2:MatchBasicData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="SaveMatchResult" nillable="true" type="q3:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLatestMatchBasicData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q4:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLatestMatchBasicDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetLatestMatchBasicDataResult" nillable="true" type="q5:ResultMatchBasicData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMatchList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q6:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMatchListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetMatchListResult" nillable="true" type="q7:ResultMatchBasicDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicDataForAllMatchList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q8:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicDataForAllMatchListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetBasicDataForAllMatchListResult" nillable="true" type="q9:ResultMatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInactiveMatchList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q10:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInactiveMatchListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetInactiveMatchListResult" nillable="true" type="q11:ResultMatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMatchDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="match" nillable="true" type="q12:MatchBasicData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMatchDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="SaveMatchDateResult" nillable="true" type="q13:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMatchHistoryDetails">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMatchHistoryDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetMatchHistoryDetailsResult" nillable="true" type="q14:ResultMatchDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecectActvityDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q15:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecectActvityDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetRecectActvityDetailsResult" nillable="true" type="q16:ResultActivityDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpenItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q17:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpenItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetOpenItemsResult" nillable="true" type="q18:ResultIntList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchCategoryList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchCategoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="FetchCategoryListResult" nillable="true" type="q19:ResultStringList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q20:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="SaveCategoryResult" nillable="true" type="q21:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMoreMatches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q22:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMoreMatchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetMoreMatchesResult" nillable="true" type="q23:ResultMatchBasicDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q24:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="DeleteMatchResult" nillable="true" type="q25:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q26:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="ActivateMatchResult" nillable="true" type="q27:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" minOccurs="0" name="mb" nillable="true" type="q28:MatchBasic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="VerifyMatchResult" nillable="true" type="q29:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllClosedMatches">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllClosedMatchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetAllClosedMatchesResult" nillable="true" type="q30:ResultMatchStatusList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExceptionHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchId" type="xs:int" />
+        <xs:element minOccurs="0" name="batchId" type="xs:int" />
+        <xs:element minOccurs="0" name="rowId" type="xs:int" />
+        <xs:element minOccurs="0" name="runId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExceptionHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="GetExceptionHistoryResult" nillable="true" type="q31:ResultMatchStatusList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCategorySortOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="categories" nillable="true" type="q32:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCategorySortOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" minOccurs="0" name="UpdateCategorySortOrderResult" nillable="true" type="q33:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

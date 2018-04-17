@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MatchBasicDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IMatchBasicDataService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WiseMatch.Web.Common.DataObjects" />
+      <xsd:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WiseMatch.Web.BL.ResultObject" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMatchBasicDataService_TestConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnection" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_TestConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_TestConnection2_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnection2" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_TestConnection2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnection2Response" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetFrequencyCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrequencyCollection" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetFrequencyCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrequencyCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_SaveMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_SaveMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetLatestMatchBasicData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestMatchBasicData" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetLatestMatchBasicData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestMatchBasicDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetMatchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchList" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetMatchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetBasicDataForAllMatchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicDataForAllMatchList" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetBasicDataForAllMatchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicDataForAllMatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetInactiveMatchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInactiveMatchList" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetInactiveMatchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInactiveMatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_SaveMatchDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMatchDate" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_SaveMatchDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMatchDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetMatchHistoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchHistoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetMatchHistoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchHistoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetRecectActvityDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecectActvityDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetRecectActvityDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecectActvityDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetOpenItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenItems" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetOpenItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_FetchCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_FetchCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_SaveCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategory" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_SaveCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetMoreMatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoreMatches" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetMoreMatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoreMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_DeleteMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_DeleteMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_ActivateMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_ActivateMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_VerifyMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_VerifyMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetAllClosedMatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClosedMatches" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetAllClosedMatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClosedMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetExceptionHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExceptionHistory" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_GetExceptionHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExceptionHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_UpdateCategorySortOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategorySortOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMatchBasicDataService_UpdateCategorySortOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategorySortOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMatchBasicDataService">
+    <wsdl:operation name="TestConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectionTest/TestConnection" message="tns:IMatchBasicDataService_TestConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectionTest/TestConnectionResponse" message="tns:IMatchBasicDataService_TestConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnection2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectionTest/TestConnection2" message="tns:IMatchBasicDataService_TestConnection2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectionTest/TestConnection2Response" message="tns:IMatchBasicDataService_TestConnection2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFrequencyCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetFrequencyCollection" message="tns:IMatchBasicDataService_GetFrequencyCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetFrequencyCollectionResponse" message="tns:IMatchBasicDataService_GetFrequencyCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/SaveMatch" message="tns:IMatchBasicDataService_SaveMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/SaveMatchResponse" message="tns:IMatchBasicDataService_SaveMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestMatchBasicData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetLatestMatchBasicData" message="tns:IMatchBasicDataService_GetLatestMatchBasicData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetLatestMatchBasicDataResponse" message="tns:IMatchBasicDataService_GetLatestMatchBasicData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetMatchList" message="tns:IMatchBasicDataService_GetMatchList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetMatchListResponse" message="tns:IMatchBasicDataService_GetMatchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicDataForAllMatchList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetBasicDataForAllMatchList" message="tns:IMatchBasicDataService_GetBasicDataForAllMatchList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetBasicDataForAllMatchListResponse" message="tns:IMatchBasicDataService_GetBasicDataForAllMatchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInactiveMatchList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetInactiveMatchList" message="tns:IMatchBasicDataService_GetInactiveMatchList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetInactiveMatchListResponse" message="tns:IMatchBasicDataService_GetInactiveMatchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMatchDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/SaveMatchDate" message="tns:IMatchBasicDataService_SaveMatchDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/SaveMatchDateResponse" message="tns:IMatchBasicDataService_SaveMatchDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchHistoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetMatchHistoryDetails" message="tns:IMatchBasicDataService_GetMatchHistoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetMatchHistoryDetailsResponse" message="tns:IMatchBasicDataService_GetMatchHistoryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecectActvityDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetRecectActvityDetails" message="tns:IMatchBasicDataService_GetRecectActvityDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetRecectActvityDetailsResponse" message="tns:IMatchBasicDataService_GetRecectActvityDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetOpenItems" message="tns:IMatchBasicDataService_GetOpenItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetOpenItemsResponse" message="tns:IMatchBasicDataService_GetOpenItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/FetchCategoryList" message="tns:IMatchBasicDataService_FetchCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/FetchCategoryListResponse" message="tns:IMatchBasicDataService_FetchCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/SaveCategory" message="tns:IMatchBasicDataService_SaveCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/SaveCategoryResponse" message="tns:IMatchBasicDataService_SaveCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoreMatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetMoreMatches" message="tns:IMatchBasicDataService_GetMoreMatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetMoreMatchesResponse" message="tns:IMatchBasicDataService_GetMoreMatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/DeleteMatch" message="tns:IMatchBasicDataService_DeleteMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/DeleteMatchResponse" message="tns:IMatchBasicDataService_DeleteMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/ActivateMatch" message="tns:IMatchBasicDataService_ActivateMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/ActivateMatchResponse" message="tns:IMatchBasicDataService_ActivateMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/VerifyMatch" message="tns:IMatchBasicDataService_VerifyMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/VerifyMatchResponse" message="tns:IMatchBasicDataService_VerifyMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClosedMatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetAllClosedMatches" message="tns:IMatchBasicDataService_GetAllClosedMatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetAllClosedMatchesResponse" message="tns:IMatchBasicDataService_GetAllClosedMatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExceptionHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetExceptionHistory" message="tns:IMatchBasicDataService_GetExceptionHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/GetExceptionHistoryResponse" message="tns:IMatchBasicDataService_GetExceptionHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategorySortOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchBasicDataService/UpdateCategorySortOrder" message="tns:IMatchBasicDataService_UpdateCategorySortOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchBasicDataService/UpdateCategorySortOrderResponse" message="tns:IMatchBasicDataService_UpdateCategorySortOrder_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IMatchBasicDataService" type="tns:IMatchBasicDataService">
+    <wsp:PolicyReference URI="#CustomBinding_IMatchBasicDataService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestConnection">
+      <soap12:operation soapAction="http://tempuri.org/IConnectionTest/TestConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnection2">
+      <soap12:operation soapAction="http://tempuri.org/IConnectionTest/TestConnection2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFrequencyCollection">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetFrequencyCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/SaveMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestMatchBasicData">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetLatestMatchBasicData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchList">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetMatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicDataForAllMatchList">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetBasicDataForAllMatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInactiveMatchList">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetInactiveMatchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMatchDate">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/SaveMatchDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchHistoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetMatchHistoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecectActvityDetails">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetRecectActvityDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenItems">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetOpenItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchCategoryList">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/FetchCategoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/SaveCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoreMatches">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetMoreMatches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/DeleteMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/ActivateMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/VerifyMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClosedMatches">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetAllClosedMatches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExceptionHistory">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/GetExceptionHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategorySortOrder">
+      <soap12:operation soapAction="http://tempuri.org/IMatchBasicDataService/UpdateCategorySortOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MatchBasicDataService">
+    <wsdl:port name="CustomBinding_IMatchBasicDataService" binding="tns:CustomBinding_IMatchBasicDataService">
+      <soap12:address location="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/wise01</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

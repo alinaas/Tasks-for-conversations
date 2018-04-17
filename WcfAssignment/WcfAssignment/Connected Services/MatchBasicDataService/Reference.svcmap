@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b7e5606-984a-4bd0-9ffb-6e1057a73c89" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MatchBasicDataService.xsd" MetadataType="Schema" ID="8fa898d5-64e3-4c9a-a257-704f0b469b77" SourceId="1" SourceUrl="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MatchBasicDataService.disco" MetadataType="Disco" ID="7afa2e74-88ac-447e-84f8-9c88268c7643" SourceId="1" SourceUrl="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?disco" />
+    <MetadataFile FileName="MatchBasicDataService1.xsd" MetadataType="Schema" ID="d1f19cab-75a4-466b-8a8f-865f8aad95c9" SourceId="1" SourceUrl="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MatchBasicDataService2.xsd" MetadataType="Schema" ID="1aa653f4-14b2-4201-97a4-9e869c61c4da" SourceId="1" SourceUrl="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MatchBasicDataService3.xsd" MetadataType="Schema" ID="8d114316-9d1a-4271-ac9c-e3cb8e3cfc03" SourceId="1" SourceUrl="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MatchBasicDataService4.xsd" MetadataType="Schema" ID="9c064df4-774c-4bee-b207-b69f0cbac01b" SourceId="1" SourceUrl="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MatchBasicDataService.wsdl" MetadataType="Wsdl" ID="d6a7041e-1c9f-4246-b049-0c21f293ea7a" SourceId="1" SourceUrl="http://wise01.northeurope.cloudapp.azure.com:91/Wisematch.Web/WebService/MatchBasicDataService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
